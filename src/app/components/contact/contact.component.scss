@@ -1,0 +1,24 @@
+.contact{
+    padding: 20px;
+
+    .title{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .contact-text{
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        vertical-align: middle;
+        padding: 150px 10px;
+
+        .email{
+            font-size: 25px;
+        }
+    }
+
+    .contact-img{
+        width: 100%;
+    }
+}

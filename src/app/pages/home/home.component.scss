@@ -1,0 +1,19 @@
+.home{
+    background-color: black;
+
+    .cover{
+        padding: 20px;
+    
+        .cover-title{
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            color: white;
+        }
+        .cover-img{
+            width: 100%;
+        }
+    }
+    
+}
