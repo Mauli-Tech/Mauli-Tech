@@ -24,6 +24,7 @@
             color: white;
             &:hover {
                 text-decoration: none;
+                font-weight: bold;
                 color: orange
             }
         }
@@ -40,7 +41,8 @@
         text-decoration: none;
         color: black;
         &:hover{
-            color: orange
+            color: orange;
+            font-weight: 800;
         }
     }
     .insta-logo{
