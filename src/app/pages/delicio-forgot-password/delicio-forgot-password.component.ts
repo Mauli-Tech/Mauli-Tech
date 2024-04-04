@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SupabaseService } from 'src/app/services/supabase.service';
   styleUrls: ['./delicio-forgot-password.component.scss'],
 })
 export class DelicioForgotPasswordComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private supabaseService: SupabaseService) {}
+  constructor(private route: ActivatedRoute, private supabaseService: SupabaseService, private router: Router) {}
 
   accessToken: any
   refreshToken: any
@@ -58,9 +58,12 @@ export class DelicioForgotPasswordComponent implements OnInit {
       if(data?.error){
         this.errorMessage = data?.error
       }else{
-        this.successMessage = "Password updated successfully. Please go back to login."
-        this.password.setValue('')
-        this.confirmPassword.setValue('')
+        this.successMessage = "Password updated successfully. Redirecting to MAULI TECH."
+        this.password.reset()
+        this.confirmPassword.reset()
+        setTimeout(() => {
+          this.router.navigateByUrl('/')
+        }, 10000);  
       }
     }
     else{

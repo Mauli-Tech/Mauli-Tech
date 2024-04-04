@@ -1,0 +1,13 @@
+<div class="forgot-password">
+  <img src="assets/Delicio-Transparent.png" class="logo" />
+  <div>
+    <label class="label">Email Verification</label>
+    <div class="error" *ngIf="this.errorMessage">
+      {{ this.errorMessage }}
+    </div>
+    <div class="success" *ngIf="this.successMessage">
+      {{ this.successMessage }}
+    </div>
+    <label class="appendMsg">{{this.appendMessage}}</label>
+  </div>
+</div>

@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    DelicioForgotPasswordComponent
+    DelicioForgotPasswordComponent,
+    EmailVerificationComponent
   ],
   imports: [
     BrowserModule,
