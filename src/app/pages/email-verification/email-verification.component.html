@@ -2,12 +2,14 @@
   <img src="assets/Delicio-Transparent.png" class="logo" />
   <div>
     <label class="label">Email Verification</label>
+    <br>
     <div class="error" *ngIf="this.errorMessage">
       {{ this.errorMessage }}
     </div>
     <div class="success" *ngIf="this.successMessage">
       {{ this.successMessage }}
     </div>
+    <br>
     <label class="appendMsg">{{this.appendMessage}}</label>
   </div>
 </div>

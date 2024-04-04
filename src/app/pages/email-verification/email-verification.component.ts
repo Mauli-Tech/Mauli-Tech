@@ -24,9 +24,10 @@ export class EmailVerificationComponent implements OnInit {
           parsedParams[key] = decodeURIComponent(value);
         });
         this.errorMessage = parsedParams['error_description']
-        this.errorMessage = this.errorMessage.replaceAll('+', ' ')
         if(!this.errorMessage){
           this.successMessage = "Email Verified Successfully. Please open the DELICIO app and login."
+        }else{
+          this.errorMessage = this.errorMessage?.replaceAll('+', ' ')
         }
       }
     });
