@@ -11,11 +11,11 @@
 
         .email {
             padding: 10px 0px;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .footer-title {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .footer-links {
@@ -32,20 +32,28 @@
 }
 
 .copyright{
-    padding: 20px;
-    font-size: 20px;
+    padding: 10px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
 
     .insta{
         text-decoration: none;
         color: black;
+        display: flex;
+        align-items: center;
         &:hover{
-            color: orange;
+            color: white;
             font-weight: 800;
         }
     }
     .insta-logo{
-        width: 30px;
+        margin-right: 5px;
+        width: 20px;
     }
+}
+
+.cptext{
+    display: flex;
+    align-items: center;
 }
