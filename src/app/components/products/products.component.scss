@@ -1,17 +1,92 @@
-.products{
-    padding: 20px;
+.products {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
 
-    .title{
-        text-align: center;
-        margin-bottom: 20px;
+.title {
+    font-size: 2.5rem;
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInDown 1s ease;
+}
+
+.product-card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 102, 0, 0.1);
+}
+
+.product-card img {
+    transition: transform 0.3s ease;
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #333333;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.btn-orange {
+    background-color: #ff6600;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-orange:hover {
+    background-color: #ffffff;
+    color: #ff6600;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.card-title{
-    font-weight: bold !important;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.2rem;
+    }
 
-.btn-orange{
-    background-color: orange;
-    color: white;
+    .btn-orange {
+        font-size: 0.9rem;
+    }
 }

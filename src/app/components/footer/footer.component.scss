@@ -1,59 +1,155 @@
 .footer {
-    background-color: black;
-    color: white;
-
-    .footer-container {
-        padding: 20px;
-
-        .logo{
-            padding-top: 25px;
-        }
-
-        .email {
-            padding: 10px 0px;
-            font-size: 18px;
-        }
-
-        .footer-title {
-            font-size: 18px;
-        }
-
-        .footer-links {
-            font-size: 15px;
-            text-decoration: none !important;
-            color: white;
-            &:hover {
-                text-decoration: none;
-                font-weight: bold;
-                color: orange
-            }
-        }
-    }
+    border-top: 2px solid #000;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    color: #000;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
 }
 
-.copyright{
-    padding: 10px;
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 60%);
+    animation: pulse 5s infinite;
+    z-index: 0;
+}
+
+.footer-container {
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease;
+}
+
+.email {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.email-link {
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #ff4500;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff6600;
+    animation: slideInLeft 1s ease;
+}
+
+.footer-links {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links:hover {
+    color: #ff4500;
+    transform: translateX(5px);
+}
+
+.copyright {
+    padding: 15px 50px;
     font-size: 16px;
     font-weight: bold;
-    text-align: center;
-
-    .insta{
-        text-decoration: none;
-        color: black;
-        display: flex;
-        align-items: center;
-        &:hover{
-            color: white;
-            font-weight: 800;
-        }
-    }
-    .insta-logo{
-        margin-right: 5px;
-        width: 20px;
-    }
+    background-color: #ff6600;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .cptext{
+    font-weight: 500;
+}
+
+.insta {
     display: flex;
     align-items: center;
+    justify-content: right;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.insta:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.insta-logo {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.insta-logo:hover {
+    transform: rotate(360deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .footer-title {
+        text-align: center;
+    }
+
+    .insta {
+        justify-content: center;
+    }
 }

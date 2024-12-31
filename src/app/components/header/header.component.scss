@@ -1,9 +1,18 @@
+.navbar-brand .logo {
+    max-height: 50px;
+    transition: transform var(--transition-time);
+}
+
+.navbar-brand:hover .logo {
+    transform: scale(1.1);
+}
+
 .item{
     font-size: 20px;
     color: black;
 
     &:hover{
-        color: white;
+        color: orange;
         font-weight: bold;
     }
 }

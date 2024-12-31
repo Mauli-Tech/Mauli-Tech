@@ -1,0 +1,65 @@
+<div class="user-guide">
+    <div class="container">
+      <!-- Delicio App Icon at the Top -->
+      <div class="app-icon">
+        <img src="assets/Delicio-Transparent.png" alt="Delicio App Icon" class="icon">
+      </div>
+      
+      <!-- Main Title -->
+      <h1 class="main-title">Delicio User Guide</h1>
+      <h2 class="guide-title">How to Add Mess Service in Delicio App</h2>
+      
+      <div class="steps">
+        <div class="step" *ngFor="let step of messServicesteps; let i = index">
+          <div class="step-number">{{i + 1}}</div>
+          <div class="step-content">
+            <h3>{{step.title}}</h3>
+            <p>{{step.description}}</p>
+            <div class="step-images">
+              <img *ngFor="let image of step.images"
+                [src]="image"
+                alt="Step Image"
+                class="step-image"
+                (click)="openImage(image)">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 class="guide-title">How to Add Cook/Chef Service in Delicio App</h2>
+      
+      <div class="steps">
+        <div class="step" *ngFor="let step of cookServicesteps; let i = index">
+          <div class="step-number">{{i + 1}}</div>
+          <div class="step-content">
+            <h3>{{step.title}}</h3>
+            <p>{{step.description}}</p>
+            <div class="step-images">
+              <img *ngFor="let image of step.images"
+                [src]="image"
+                alt="Step Image"
+                class="step-image"
+                (click)="openImage(image)">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Developed by Mauli Tech Section -->
+      <div class="footer">
+        <div class="footer-content" (click)="redirectToHome()">
+          <p class="developed-by">Developed by</p>
+          <img src="assets/Mauli Tech.png" alt="Mauli Tech Logo" class="footer-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Fullscreen Image Overlay -->
+  <div *ngIf="isImageOpen" class="overlay" (click)="closeImage()">
+    <div class="overlay-content">
+      <img src="assets/x-circle-fill.svg" class="close-icon" (click)="closeImage()"/>
+      <img [src]="currentImage" class="overlay-image" alt="Full-size image">
+    </div>
+  </div>
+  

@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
+import { DelicioUserGuideComponent } from './pages/delicio-user-guide/delicio-user-guide.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EmailVerificationComponent } from './pages/email-verification/email-ver
     ContactComponent,
     FooterComponent,
     DelicioForgotPasswordComponent,
-    EmailVerificationComponent
+    EmailVerificationComponent,
+    DelicioUserGuideComponent
   ],
   imports: [
     BrowserModule,
