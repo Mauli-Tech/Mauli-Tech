@@ -1,155 +1,122 @@
 .footer {
-    border-top: 2px solid #000;
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
-    color: #000;
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.footer::before {
-    content: "";
-    position: absolute;
-    top: -30%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 60%);
-    animation: pulse 5s infinite;
-    z-index: 0;
+  color: #d3dae5;
+  background: #17233c;
 }
 
 .footer-container {
-    padding: 30px;
-    position: relative;
-    z-index: 1;
+  padding-top: 64px;
+  padding-bottom: 22px;
 }
 
-.logo {
-    height: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease;
+.footer-brand .logo {
+  display: block;
+  width: auto;
+  max-width: 180px;
+  max-height: 52px;
+  margin-bottom: 17px;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-.email {
-    margin-top: 15px;
-    font-size: 18px;
-    line-height: 25px;
+.footer-brand p {
+  max-width: 270px;
+  margin: 0 0 12px;
+  color: #b7c1d0;
+  font-size: 0.94rem;
 }
 
 .email-link {
-    color: #ff6600;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #ff9a6f;
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .email-link:hover {
-    color: #ff4500;
+  color: #fff;
 }
 
 .footer-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #ff6600;
-    animation: slideInLeft 1s ease;
+  margin: 5px 0 17px;
+  color: #fff;
+  font-family: "Manrope", "DM Sans", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+.footer-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer-links {
-    font-size: 16px;
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease, transform 0.2s ease;
+  color: #b7c1d0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 160ms ease;
 }
 
 .footer-links:hover {
-    color: #ff4500;
-    transform: translateX(5px);
+  color: #ff9a6f;
 }
 
-.copyright {
-    padding: 15px 50px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #ff6600;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-.cptext{
-    font-weight: 500;
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: #aab5c5;
+  font-size: 0.85rem;
 }
 
 .insta {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 8px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e7ebf1;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .insta:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
+  color: #ff9a6f;
 }
 
 .insta-logo {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
 }
 
-.insta-logo:hover {
-    transform: rotate(360deg);
-}
+@media (max-width: 767.98px) {
+  .footer-container {
+    padding-top: 48px;
+  }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+  .footer-brand {
+    margin-bottom: 12px;
+    text-align: center;
+  }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  .footer-brand p {
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.7;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2);
-    }
-}
+  .footer-brand .logo {
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-/* Responsive */
-@media (max-width: 991.98px) {
-    .footer-title {
-        text-align: center;
-    }
-
-    .insta {
-        justify-content: center;
-    }
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 34px;
+  }
 }

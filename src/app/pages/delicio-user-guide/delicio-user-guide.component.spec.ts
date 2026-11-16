@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 import { DelicioUserGuideComponent } from './delicio-user-guide.component';
 
@@ -8,7 +10,9 @@ describe('DelicioUserGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DelicioUserGuideComponent ]
+      declarations: [ DelicioUserGuideComponent ],
+      imports: [CommonModule],
+      providers: [Title, Meta]
     })
     .compileComponents();
 

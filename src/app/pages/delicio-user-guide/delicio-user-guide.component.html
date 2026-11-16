@@ -1,65 +1,97 @@
-<div class="user-guide">
-    <div class="container">
-      <!-- Delicio App Icon at the Top -->
+<main class="guide-page">
+  <header class="guide-header">
+    <div class="container guide-header-inner">
+      <a class="brand-link" href="/" aria-label="Mauli Tech home">
+        <img src="assets/Mauli Tech.png" alt="Mauli Tech" />
+      </a>
+      <a class="back-link" href="/">Back to Mauli Tech <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <div class="container guide-container">
+    <section class="guide-hero" aria-labelledby="guide-title">
       <div class="app-icon">
-        <img src="assets/Delicio-Transparent.png" alt="Delicio App Icon" class="icon">
+        <img src="assets/Delicio-Transparent.png" alt="Delicio app icon" />
       </div>
-      
-      <!-- Main Title -->
-      <h1 class="main-title">Delicio User Guide</h1>
-      <h2 class="guide-title">How to Add Mess Service in Delicio App</h2>
-      
-      <div class="steps">
-        <div class="step" *ngFor="let step of messServicesteps; let i = index">
-          <div class="step-number">{{i + 1}}</div>
+      <p class="eyebrow">Delicio help center</p>
+      <h1 id="guide-title">List your service on Delicio</h1>
+      <p class="hero-description">
+        Follow the steps below to add and manage a mess, tiffin, cook, or chef service from the Delicio app.
+      </p>
+      <nav class="guide-nav" aria-label="Choose a service guide">
+        <a href="#mess-services" (click)="scrollToSection($event, 'mess-services')">Mess &amp; tiffin <span aria-hidden="true">↓</span></a>
+        <a href="#cook-services" (click)="scrollToSection($event, 'cook-services')">Cook &amp; chef <span aria-hidden="true">↓</span></a>
+      </nav>
+    </section>
+
+    <section
+      *ngFor="let guide of serviceGuides"
+      class="service-guide"
+      [id]="guide.id"
+      [attr.aria-labelledby]="guide.id + '-title'">
+      <div class="service-heading">
+        <span class="service-icon" aria-hidden="true">{{ guide.icon }}</span>
+        <div>
+          <p class="eyebrow">Step-by-step guide</p>
+          <h2 [id]="guide.id + '-title'">{{ guide.title }}</h2>
+          <p>{{ guide.description }}</p>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li class="step" *ngFor="let step of guide.steps; let i = index">
+          <span class="step-number" aria-hidden="true">{{ i + 1 }}</span>
           <div class="step-content">
-            <h3>{{step.title}}</h3>
-            <p>{{step.description}}</p>
-            <div class="step-images">
-              <img *ngFor="let image of step.images"
-                [src]="image"
-                alt="Step Image"
-                class="step-image"
-                (click)="openImage(image)">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+            <div class="step-images" *ngIf="step.images.length">
+              <button
+                *ngFor="let image of step.images; let imageIndex = index"
+                class="image-button"
+                type="button"
+                [attr.aria-label]="'Enlarge ' + step.title + ' screenshot ' + (imageIndex + 1)"
+                (click)="openImage(image, step.title + ' screenshot ' + (imageIndex + 1), $event)">
+                <img
+                  [src]="image"
+                  [alt]="step.title + ' screenshot ' + (imageIndex + 1)"
+                  loading="lazy"
+                  decoding="async" />
+                <span class="image-hint" aria-hidden="true">View screenshot ↗</span>
+              </button>
             </div>
           </div>
-        </div>
+        </li>
+      </ol>
+    </section>
+
+    <aside class="guide-help">
+      <span class="help-icon" aria-hidden="true">?</span>
+      <div>
+        <h2>Need a hand?</h2>
+        <p>Questions about listing your service? Get in touch with the Mauli Tech team.</p>
       </div>
-  
-      <h2 class="guide-title">How to Add Cook/Chef Service in Delicio App</h2>
-      
-      <div class="steps">
-        <div class="step" *ngFor="let step of cookServicesteps; let i = index">
-          <div class="step-number">{{i + 1}}</div>
-          <div class="step-content">
-            <h3>{{step.title}}</h3>
-            <p>{{step.description}}</p>
-            <div class="step-images">
-              <img *ngFor="let image of step.images"
-                [src]="image"
-                alt="Step Image"
-                class="step-image"
-                (click)="openImage(image)">
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Developed by Mauli Tech Section -->
-      <div class="footer">
-        <div class="footer-content" (click)="redirectToHome()">
-          <p class="developed-by">Developed by</p>
-          <img src="assets/Mauli Tech.png" alt="Mauli Tech Logo" class="footer-logo">
-        </div>
-      </div>
-    </div>
+      <a href="mailto:technomauli@gmail.com">Contact support <span aria-hidden="true">→</span></a>
+    </aside>
   </div>
-  
-  <!-- Fullscreen Image Overlay -->
-  <div *ngIf="isImageOpen" class="overlay" (click)="closeImage()">
-    <div class="overlay-content">
-      <img src="assets/x-circle-fill.svg" class="close-icon" (click)="closeImage()"/>
-      <img [src]="currentImage" class="overlay-image" alt="Full-size image">
-    </div>
+
+  <footer class="guide-footer">
+    <a href="/" aria-label="Mauli Tech home">
+      <img src="assets/Mauli Tech.png" alt="Mauli Tech" loading="lazy" />
+    </a>
+    <span>Thoughtful technology for everyday life.</span>
+  </footer>
+</main>
+
+<div
+  *ngIf="isImageOpen"
+  class="image-overlay"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="currentImageAlt"
+  (click)="closeImage()">
+  <div class="image-dialog" (click)="$event.stopPropagation()">
+    <button class="close-button" type="button" aria-label="Close screenshot" (click)="closeImage()">×</button>
+    <img [src]="currentImage" [alt]="currentImageAlt" />
+    <p>{{ currentImageAlt }}</p>
   </div>
-  
+</div>

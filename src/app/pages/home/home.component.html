@@ -1,23 +1,30 @@
 <app-header></app-header>
-<div class="home" id="home">
-  <div class="container cover">
+<main>
+  <section class="home" id="home" aria-labelledby="hero-title">
+    <div class="container cover">
       <div class="row align-items-center">
-          <div class="col-lg-6">
-              <h1 class="cover-title">
-                  Empowering Businesses with Innovative Solutions.
-              </h1>
-              <p class="cover-subtitle">
-                  We deliver customized strategies and tools to help your business grow and thrive in today's competitive market.
-              </p>
-              <a href="#contact" class="btn btn-primary btn-learn-more">Learn More</a>
+        <div class="col-lg-6 hero-copy">
+          <p class="eyebrow"><span aria-hidden="true"></span> Ideas made useful</p>
+          <h1 class="cover-title" id="hero-title">Thoughtful technology for <span>everyday life.</span></h1>
+          <p class="cover-subtitle">
+            We create practical apps and digital products that help people stay organized, informed, and connected to what matters.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-learn-more">Explore our products <span aria-hidden="true">→</span></a>
+            <a href="#about" class="hero-secondary">Get to know us</a>
           </div>
-          <div class="col-lg-6 text-center">
-              <img class="cover-img" src="assets/illustration-1.png" alt="Business Solutions Illustration" />
-          </div>
+          <p class="hero-note">Made with care. Designed for real life.</p>
+        </div>
+        <div class="col-lg-6 hero-art">
+          <div class="art-glow" aria-hidden="true"></div>
+          <img class="cover-img" src="assets/illustration-1.png" alt="Illustration representing connected digital products" fetchpriority="high" />
+          <div class="hero-badge"><span aria-hidden="true">✦</span><span>Simple ideas.<br /><strong>Useful technology.</strong></span></div>
+        </div>
       </div>
-  </div>
-</div>
-<app-products></app-products>
-<app-about></app-about>
-<app-contact></app-contact>
+    </div>
+  </section>
+  <app-products></app-products>
+  <app-about></app-about>
+  <app-contact></app-contact>
+</main>
 <app-footer></app-footer>
